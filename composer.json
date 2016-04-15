@@ -1,0 +1,13 @@
+{
+  "name": "myfyba/pls",
+  "description": "MYFYBA Private Listing System API",
+  "require": {
+    "php-curl-class/php-curl-class": "4.11.*",
+    "league/fractal": "0.13.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "MyFYBA\\PLS\\API": "src"
+    }
+  }
+}
