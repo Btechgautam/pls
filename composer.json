@@ -6,8 +6,8 @@
     "league/fractal": "0.13.*"
   },
   "autoload": {
-    "psr-0": {
-      "MyFYBA\\PLS\\API": "src"
+    "psr-4": {
+      "MyFYBA\\PLS\\": "src"
     }
   }
 }
