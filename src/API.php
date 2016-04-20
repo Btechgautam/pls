@@ -33,7 +33,7 @@ class API {
         $this->key = $settings['key'];
         $this->id = $settings['id'];
         if (empty($settings['endpoint'])) {
-            $this->endpoint = 'https://api.yachtmls.pro';
+            $this->endpoint = 'https://api.myfyba.org';
         } else {
             $this->endpoint = $settings['endpoint'];
         }
