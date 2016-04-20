@@ -2,8 +2,7 @@
   "name": "myfyba/pls",
   "description": "MYFYBA Private Listing System API",
   "require": {
-    "php-curl-class/php-curl-class": "4.11.*",
-    "league/fractal": "0.13.*"
+    "php-curl-class/php-curl-class": "4.11.*"
   },
   "autoload": {
     "psr-4": {
