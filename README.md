@@ -32,6 +32,20 @@ $settings = [
 $api = new API($settings);
 ```
 
+#### Example
+
+```php
+use MyFYBA\PLS\API;
+    
+$settings = [
+    'key' => 'dcabf94ad97d6f09914c8be1a302891520a5964d' (String, Required), // Example: ''
+    'id' => 56,
+    'endpoint' => 'https://api.myfyba.org'
+];
+    
+$api = new API($settings);
+```
+
 ### Filter vessels
 
 Method: `vessel('filter string')`
