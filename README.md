@@ -38,7 +38,7 @@ $api = new API($settings);
 use MyFYBA\PLS\API;
     
 $settings = [
-    'key' => 'dcabf94ad97d6f09914c8be1a302891520a5964d' (String, Required), // Example: ''
+    'key' => 'dcabf94ad97d6f09914c8be1a302891520a5964d',
     'id' => 56,
     'endpoint' => 'https://api.myfyba.org'
 ];
