@@ -63,10 +63,15 @@ class API {
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function get_filters() {
-        return $_SERVER["QUERY_STRING"];
+        if(!empty($_SERVER["QUERY_STRING"])){
+            return $_SERVER["QUERY_STRING"];
+        }
+        else{
+            return '';
+        }
     }
 
     /**
