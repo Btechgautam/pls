@@ -66,10 +66,9 @@ class API {
      * @return string
      */
     public function get_filters() {
-        if(!empty($_SERVER["QUERY_STRING"])){
+        if (!empty($_SERVER["QUERY_STRING"])) {
             return $_SERVER["QUERY_STRING"];
-        }
-        else{
+        } else {
             return '';
         }
     }
@@ -98,4 +97,12 @@ class API {
         return $this->curl->get($this->url($filters = $id, 'brokerage'));
     }
 
+    /**
+     * @param null $resource
+     * @param null $filters
+     * @return string
+     */
+    public function filters($resource = null, $filters = null) {
+        return $this->curl->get($this->url($filters, 'filters/' . $resource));
+    }
 }
