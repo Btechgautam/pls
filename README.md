@@ -100,3 +100,11 @@ Method: `brokerage(id)`
 ```php
 $api->brokerage(5);
 ```
+
+### Vessel and Charter filters
+
+Method: `filters($resource, $filters)`
+
+```php
+$api->filters('vessel', 'lang=fr&status=On');
+```
