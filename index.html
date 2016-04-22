@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>MyFYBA Private Listing API - PHP Wrapper by myfyba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">MyFYBA Private Listing API - PHP Wrapper</h1>
+      <h2 class="project-tagline">PLS API - MYFYBA Private Listing System API</h2>
+      <a href="https://github.com/myfyba/pls" class="btn">View on GitHub</a>
+      <a href="https://github.com/myfyba/pls/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/myfyba/pls/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="myfyba-private-listing-api---php-library" class="anchor" href="#myfyba-private-listing-api---php-library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MyFYBA Private Listing API - PHP Library</h1>
+
+<p>PLS API - MYFYBA Private Listing System API</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Via Composer: Here's what you add to your composer.json file to have <code>src/API.php</code> automatically imported into your vendors folder:</p>
+
+<pre><code>{
+    "require": {
+        "myfyba/pls": "dev-master"
+    }
+}
+</code></pre>
+
+<p>Of course, you'll then need to run <code>composer update</code>.  </p>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
+
+<h4>
+<a id="note-all-methods-return-serialized-json" class="anchor" href="#note-all-methods-return-serialized-json" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Note: All methods return serialized JSON</h4>
+
+<h3>
+<a id="instantiate-api-class" class="anchor" href="#instantiate-api-class" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instantiate API class</h3>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">MyFYBA\PLS\API</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$settings</span> <span class="pl-k">=</span> [</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>key<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>YOUR API KEY<span class="pl-pds">'</span></span> (<span class="pl-k">String</span>, <span class="pl-c1">Required</span>), <span class="pl-c">// Example: 'dcabf94ad97d6f09914c8be1a302891520a5964d'</span></span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">USER</span> ID (<span class="pl-c1">Number</span>, <span class="pl-c1">Required</span>), <span class="pl-c">// Example: 56</span></span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>endpoint<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>https://api.myfyba.org<span class="pl-pds">'</span></span> (<span class="pl-c1">Optional</span>)</span>
+<span class="pl-s1">];</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$api</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">API</span>(<span class="pl-smi">$settings</span>);</span></pre></div>
+
+<h4>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h4>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">MyFYBA\PLS\API</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$settings</span> <span class="pl-k">=</span> [</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>key<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>dcabf94ad97d6f09914c8be1a302891520a5964d<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">56</span>,</span>
+<span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>endpoint<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>https://api.myfyba.org<span class="pl-pds">'</span></span></span>
+<span class="pl-s1">];</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$api</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">API</span>(<span class="pl-smi">$settings</span>);</span></pre></div>
+
+<h3>
+<a id="filter-vessels" class="anchor" href="#filter-vessels" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Filter vessels</h3>
+
+<p>Method: <code>vessel('filter string')</code></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$api</span><span class="pl-k">-&gt;</span>vessel(<span class="pl-s"><span class="pl-pds">'</span>page=1&amp;currency=usd&amp;price=0,1000000<span class="pl-pds">'</span></span>);</span></pre></div>
+
+<p>Optionally <code>get_filters()</code> method returns complete query string, hence we can rewrite the above call as</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$api</span><span class="pl-k">-&gt;</span>vessel(<span class="pl-smi">$api</span><span class="pl-k">-&gt;</span>get_filters());</span></pre></div>
+
+<h3>
+<a id="fetch-vessel-using-its-id" class="anchor" href="#fetch-vessel-using-its-id" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fetch vessel using it's ID</h3>
+
+<p>Method: <code>vessel(id)</code></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$api</span><span class="pl-k">-&gt;</span>vessel(<span class="pl-c1">82</span>);</span></pre></div>
+
+<h3>
+<a id="filter-charter-vessels" class="anchor" href="#filter-charter-vessels" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Filter charter vessels</h3>
+
+<p>Method: <code>charter('filter string')</code></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$api</span><span class="pl-k">-&gt;</span>charter(<span class="pl-s"><span class="pl-pds">'</span>page=1&amp;currency=usd&amp;price=0,1000000<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$api</span><span class="pl-k">-&gt;</span>charter(<span class="pl-smi">$api</span><span class="pl-k">-&gt;</span>get_filters()); <span class="pl-c">// As explained above</span></span></pre></div>
+
+<h3>
+<a id="fetch-charter-details-using-vessel-id" class="anchor" href="#fetch-charter-details-using-vessel-id" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fetch charter details using vessel ID</h3>
+
+<p>Method: <code>charter(id)</code></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$api</span><span class="pl-k">-&gt;</span>charter(<span class="pl-c1">82</span>);</span></pre></div>
+
+<h3>
+<a id="fetch-brokerage-details-yours" class="anchor" href="#fetch-brokerage-details-yours" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fetch brokerage details (Yours)</h3>
+
+<p>Method: <code>brokerage()</code></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$api</span><span class="pl-k">-&gt;</span>brokerage();</span></pre></div>
+
+<h3>
+<a id="fetch-brokerage-by-its-id" class="anchor" href="#fetch-brokerage-by-its-id" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fetch brokerage by it's ID</h3>
+
+<p>Method: <code>brokerage(id)</code></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$api</span><span class="pl-k">-&gt;</span>brokerage(<span class="pl-c1">5</span>);</span></pre></div>
+
+<h3>
+<a id="vessel-and-charter-filters" class="anchor" href="#vessel-and-charter-filters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Vessel and Charter filters</h3>
+
+<p>Method: <code>filters($resource, $filters)</code></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$api</span><span class="pl-k">-&gt;</span>filters(<span class="pl-s"><span class="pl-pds">'</span>vessel<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>lang=fr&amp;status=On<span class="pl-pds">'</span></span>);</span></pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/myfyba/pls">MyFYBA Private Listing API - PHP Wrapper</a> is maintained by <a href="https://github.com/myfyba">myfyba</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
