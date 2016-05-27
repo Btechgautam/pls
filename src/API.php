@@ -43,6 +43,36 @@ class API {
         $this->curl->setHeader('X-CLIENT-ID', $this->id);
     }
 
+    public function __call($method_name, $parameter) {
+        if ($method_name == 'vessel') {
+            $count = count($parameter);
+            switch ($count) {
+                case 1:
+                    return $this->curl->get($this->url($parameter[0], 'vessel'));
+                    break;
+                case 2:
+                    return $this->curl->get($this->endpoint . '/vessel/' . $parameter[0] . '?' . $parameter[1]);
+                    break;
+                default:
+                    throw new \Exception("Bad argument");
+            }
+        } elseif ($method_name == 'charter') {
+            $count = count($parameter);
+            switch ($count) {
+                case 1:
+                    return $this->curl->get($this->url($parameter[0], 'charter'));
+                    break;
+                case 2:
+                    return $this->curl->get($this->endpoint . '/charter/' . $parameter[0] . '?' . $parameter[1]);
+                    break;
+                default:
+                    throw new \Exception("Bad argument");
+            }
+        } else {
+            throw new \Exception("Function $method_name does not exists ");
+        }
+    }
+
     /**
      * @param $filters
      * @param $slug
@@ -71,22 +101,6 @@ class API {
         } else {
             return '';
         }
-    }
-
-    /**
-     * @param $filters
-     * @return string
-     */
-    public function vessel($filters) {
-        return $this->curl->get($this->url($filters, 'vessel'));
-    }
-
-    /**
-     * @param $filters
-     * @return string
-     */
-    public function charter($filters) {
-        return $this->curl->get($this->url($filters, 'charter'));
     }
 
     /**
