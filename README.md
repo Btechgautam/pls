@@ -1,4 +1,4 @@
-# MyFYBA Private Listing API - PHP Library
+# MYFYBA Private Listing API - PHP Library
 
 PLS API - MYFYBA Private Listing System API
 
@@ -60,12 +60,12 @@ Optionally `get_filters()` method returns complete query string, hence we can re
 $api->vessel($api->get_filters());
 ```    
     
-### Fetch vessel using it's ID
+### Fetch vessel using it's ID and language filter
 
-Method: `vessel(id)`
-    
+Method: `vessel(id, $api->get_filters())`
+
 ```php
-$api->vessel(82);
+$api->vessel(82, 'lang=fr');
 ```
 
 ### Filter charter vessels
@@ -77,12 +77,12 @@ $api->charter('page=1&currency=usd&price=0,1000000');
 $api->charter($api->get_filters()); // As explained above
 ```
     
-### Fetch charter details using vessel ID
+### Fetch charter details using vessel ID and language filter
 
-Method: `charter(id)`
+Method: `charter(id, $this->get_filters())`
 
 ```php
-$api->charter(82);
+$api->charter(82, 'lang=fr');
 ```
 
 ### Fetch brokerage details (Yours)
