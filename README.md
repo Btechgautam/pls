@@ -1,4 +1,4 @@
-# I Private Listing API - PHP Library
+# IYBA Private Listing API - PHP Library
 
 PLS API - IYB Private Listing System API
 
