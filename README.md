@@ -1,6 +1,6 @@
-# MYFYBA Private Listing API - PHP Library
+# I Private Listing API - PHP Library
 
-PLS API - MYFYBA Private Listing System API
+PLS API - IYB Private Listing System API
 
 ## Installation
 
@@ -8,7 +8,7 @@ Via Composer: Here's what you add to your composer.json file to have `src/API.ph
 
     {
         "require": {
-            "myfyba/pls": "dev-master"
+            "iyba/pls": "dev-master"
         }
     }
 
@@ -21,12 +21,12 @@ Of course, you'll then need to run `composer update`.
 ### Instantiate API class
 
 ```php
-use MyFYBA\PLS\API;
+use IYBA\PLS\API;
     
 $settings = [
     'key' => 'YOUR API KEY' (String, Required), // Example: 'dcabf94ad97d6f09914c8be1a302891520a5964d'
     'id' => USER ID (Number, Required), // Example: 56
-    'endpoint' => 'https://api.myfyba.org' (Optional)
+    'endpoint' => 'https://api.iyba.pro' (Optional)
 ];
     
 $api = new API($settings);

@@ -1,12 +1,12 @@
 {
-  "name": "myfyba/pls",
-  "description": "MYFYBA Private Listing System API",
+  "name": "iyba/pls",
+  "description": "IYBA Private Listing System API",
   "require": {
     "php-curl-class/php-curl-class": "4.11.*"
   },
   "autoload": {
     "psr-4": {
-      "MyFYBA\\PLS\\": "src"
+      "IYBA\\PLS\\": "src"
     }
   }
 }
