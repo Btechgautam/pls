@@ -1,6 +1,6 @@
 # IYBA Private Listing API - PHP Library
 
-PLS API - IYB Private Listing System API
+PLS API - IYBA Private Listing System API
 
 ## Installation
 
@@ -33,12 +33,12 @@ $api = new API($settings);
 #### Example
 
 ```php
-use MyFYBA\PLS\API;
+use IYBA\PLS\API;
     
 $settings = [
     'key' => 'dcabf94ad97d6f09914c8be1a302891520a5964d',
     'id' => 56,
-    'endpoint' => 'https://api.myfyba.org'
+    'endpoint' => 'https://api.iyba.pro'
 ];
     
 $api = new API($settings);

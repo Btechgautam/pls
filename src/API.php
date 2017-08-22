@@ -10,7 +10,7 @@
  * @author   Bhargav Nanekalva <bhargav3@gmail.com>
  * @license  MIT License
  * @version  1.0.4
- * @link     http://github.com/myfyba/pls
+ * @link     http://github.com/iyba/pls
  */
 
 namespace IYBA\PLS;
