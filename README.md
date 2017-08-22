@@ -16,8 +16,6 @@ Of course, you'll then need to run `composer update`.
 
 ## How to use
 
-#### Note: All methods return serialized JSON
-
 ### Instantiate API class
 
 ```php
@@ -48,10 +46,14 @@ $api = new API($settings);
 
 ### Filter vessels
 
-Method: `vessel('filter string')`
+Method: `vessel($filters_array)`
 
 ```php
-$api->vessel('page=1&currency=usd&price=0,1000000');
+$api->vessel([
+    'page' => 1,
+    'currency' => 'usd',
+    'price' => '0,1000000'
+]);
 ```
 
 Optionally `get_filters()` method returns complete query string, hence we can rewrite the above call as
