@@ -67,11 +67,7 @@ class API
      */
     private function url($filters, $slug)
     {
-        if (!empty($slug)) {
-            return $this->endpoint . '/' . $slug;
-        } else {
-            return $this->endpoint . '/' . $slug . '/' . $filters;
-        }
+        return $this->endpoint . '/' . $slug . '?' . $filters;
     }
 
     /**
